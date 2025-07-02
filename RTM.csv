@@ -1,0 +1,5 @@
+Requirement ID,Module,Requirement Description,Test Case ID(s)
+REQ001,Login,User should be able to login with valid credentials,"TC001, TC002, TC061傍C064, TC081, TC082"
+REQ002,Registration,User should be able to register with valid data,"TC003, TC004, TC011傍C020, TC065傍C068, TC083, TC084, TC091傍C095"
+REQ003,Add to Cart,Users can add available products to the cart,"TC005, TC021傍C030, TC069傍C072, TC085, TC086"
+REQ004,Checkout,Users can complete checkout with valid data,"TC007, TC031傍C040, TC073傍C076, TC087, TC088"

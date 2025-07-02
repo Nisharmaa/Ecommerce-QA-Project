@@ -1,0 +1,4 @@
+Bug ID,Scenario TID,Title,Description,Steps to Reproduce,Expected Result,Actual Result,Severity,Status,Reported By
+BUG001,TID004,Registration fails to detect duplicate email,User registers using an already existing email ID,1. Go to Registration Page   2. Enter email: existing@example.com3. Fill rest of details4. Click Submit,Error message for duplicate email,Registration accepted,High,Open,Nisha Sharma
+BUG002,TID006,Cart allows quantity exceeding available stock,Cart does not validate maximum stock limit,1. Navigate to Product Page2. Enter quantity: 9993. Click Add to Cart4. View Cart,"Error shown: ""Quantity exceeds stock""",Product added to cart,High,Open,Nisha Sharma
+BUG003,TID010,Payment gateway timeout not handled gracefully,"During PayPal payment, if timeout occurs, app behaves unpredictably",1. Proceed to Payment2. Choose PayPal3. Wait without completing payment,Display timeout error gracefully,App hangs / unclear state,Medium,Open,Nisha Sharma

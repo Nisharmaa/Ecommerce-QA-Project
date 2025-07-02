@@ -1,0 +1,140 @@
+,,, Test Case for Project,,,,,,,
+,,,Project Name,OpenCart E-commerce Testing,,,,,,
+,,,Module Name,"Login, Cart, Checkout etc.",,,,,,
+,,,Created By,Nisha Sharma,,,,,,
+,,,Created Date,6/2/2025,,,,,,
+,,,Peer Review By,N/A (Self Project),,,,,,
+,,,Peer Reviewed Date,N/A,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Scenario TID,Scenario Description,Test Case ID,Pre Condition,Steps to Execute,Expected Result,Actual Result,Status,Executed QA Name,Misc (Comments),Pri
+TID001,Login with valid credentials,TC001,Module is accessible and data is ready,1. Go to Login Page2. Enter email:,Function works as expected,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+,,,,testuser@example.com,,,,,,
+,,,,3. Enter password:,,,,,,
+,,,,Test@123,,,,,,
+,,,,4. Click Login,,,,,,
+TID002,Login with wrong password,TC002,Module is accessible and data is ready,1. Go to Login Page2. Enter email:,Function works as expected,Function works as expected,Pass,Nisha Sharma,Negative test,P1
+,,,,testuser@example.com,,,,,,
+,,,,3. Enter wrong password:,,,,,,
+,,,,WrongPass123,,,,,,
+,,,,4. Click Login,,,,,,
+TID003,Register with all valid data,TC003,Module is accessible and data is ready,1. Go to Registration Page2. Enter full name:,Function works as expected,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+,,,,Nisha Sharma,,,,,,
+,,,,3. Enter email:,,,,,,
+,,,,newuser@example.com,,,,,,
+,,,,4. Set password:,,,,,,
+,,,,Abc@123,,,,,,
+,,,,5. Submit,,,,,,
+TID004,Register with existing email,TC004,Module is accessible and data is ready,1. Go to Registration Page2. Enter full name:,Error shown for duplicate,Unexpected result observed,Fail,Nisha Sharma,Negative test,P1
+,,,,Test User,,,,,,
+,,,,3. Enter email:,,,,,,
+,,,,existing@example.com,,,,,,
+,,,,4. Set password:,,,,,,
+,,,,Abc@123,,,,,,
+,,,,5. Submit,,,,,,
+TID005,Add item to cart,TC005,Module is accessible and data is ready,1. Login as user  2. Navigate to product page3. Click 'Add to Cart' for item XYZ4. View Cart,Function works as expected,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+TID006,Cart item quantity exceeds stock,TC006,Module is accessible and data is ready,1. Go to product page2. Enter quantity: 9993. Click 'Add to Cart'4. View Cart,Error message for stock,Unexpected result observed,Fail,Nisha Sharma,Negative test,P1
+TID007,Checkout with valid address,TC007,Module is accessible and data is ready,1. Add items to cart2. Click on 'Checkout'3. Enter address details4. Click 'Place Order',Order placed successfully,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+TID008,Checkout without login,TC008,Module is accessible and data is ready,1. Add item to cart2. Click Checkout3. Observe system redirect to login,Redirect to login shown,Function works as expected,Pass,Nisha Sharma,Negative test,P1
+TID009,Payment with valid card,TC009,Module is accessible and data is ready,1. Proceed to payment2. Enter card no:,Payment processed,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+,,,,4111 1111 1111 1111,,,,,,
+,,,,3. Expiry:,,,,,,
+,,,,26-Dec,,,,,,
+,,,,", CVV:",,,,,,
+,,,,123,,,,,,
+,,,,4. Click Pay,,,,,,
+TID010,Payment gateway timeout,TC010,Module is accessible and data is ready,1. Proceed to payment2. Choose PayPal3. Wait for timeout or delay4. Observe system behavior,Graceful error handling,Unexpected result observed,Fail,Nisha Sharma,Negative test,P2
+TID011,Register with weak password,TC011,Module is accessible and data is ready,1. Go to Registration Page 2. Enter full name: Ritu Patel 3. Enter email: ritu@example.com 4. Set password: 12345 5. Submit,Error for weak password,Error for weak password,Pass,Nisha Sharma,Negative test,P1
+TID012,Register with missing fields,TC012,Module is accessible and data is ready,1. Go to Registration Page 2. Leave email empty 3. Set password: Test@123 4. Submit,Required field error shown,Required field error shown,Pass,Nisha Sharma,Negative test,P1
+TID013,Register with invalid email,TC013,Module is accessible and data is ready,1. Go to Registration Page 2. Enter full name: John 3. Enter email: invalidemail 4. Set password: Abc@123 5. Submit,Email format validation error,Email format validation error,Pass,Nisha Sharma,Negative test,P1
+TID014,Register with long full name,TC014,Module is accessible and data is ready,1. Go to Registration Page 2. Enter full name: John Jacob Jingleheimer Schmidt The Third 3. Email: jj@example.com 4. Password: Xyz@123 5. Submit,Function works as expected,Function works as expected,Pass,Nisha Sharma,Boundary test,P1
+TID015,Register with password mismatch,TC015,Module is accessible and data is ready,1. Go to Registration Page 2. Name: Priya Mehta 3. Email: priya@example.com 4. Password: Test@123 5. Confirm: Test@124 6. Submit,Mismatch error shown,Mismatch error shown,Pass,Nisha Sharma,Negative test,P1
+TID016,Register with existing email,TC016,Module is accessible and data is ready,1. Go to Registration Page 2. Enter name: Amit Sharma 3. Email: existing@example.com 4. Set password: Abc@123 5. Submit,Error shown for duplicate,Error shown for duplicate,Pass,Nisha Sharma,Negative test,P1
+TID017,Register with all valid details,TC017,Module is accessible and data is ready,1. Go to Registration Page 2. Enter name: Rahul Jain 3. Email: rahul.jain@example.com 4. Set password: Rahul@123 5. Submit,Function works as expected,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+TID018,Register using mobile number,TC018,Module is accessible and data is ready,1. Go to Registration Page 2. Enter name: Kavya Singh 3. Enter mobile: 9876543210 4. Set password: Kavya@123 5. Submit,Function works as expected,Function works as expected,Pass,Nisha Sharma,Positive test,P0
+TID019,Register with special characters in name,TC019,Module is accessible and data is ready,1. Go to Registration Page 2. Name: @N!sha*# Sharma 3. Email: special@example.com 4. Password: Test@123 5. Submit,Error or acceptance based on rule,Error or acceptance based on rule,Pass,Nisha Sharma,Boundary/Edge case,P2
+TID020,Attempt registration while already logged in,TC020,Module is accessible and data is ready,1. Login as existing user 2. Navigate to Registration page,Redirect to home/dashboard,Redirect to home/dashboard,Pass,Nisha Sharma,Negative test,P2
+TID021,Add single item to cart,TC021,Module is accessible and data is ready,"1. Login as user 2. Go to product listing 3. Click ""Add to Cart"" on a product 4. View cart",Item appears in cart,Item appears in cart,Pass,Nisha Sharma,Positive test,P0
+TID022,Add multiple items to cart,TC022,Module is accessible and data is ready,"1. Login as user 2. Add item A, B, and C to cart 3. View cart",All items appear correctly,All items appear correctly,Pass,Nisha Sharma,Positive test,P0
+TID023,Add out-of-stock item to cart,TC023,Module is accessible and data is ready,1. Go to product page 2. Try to add an out-of-stock item,Error message displayed,Error message displayed,Pass,Nisha Sharma,Negative test,P1
+TID024,Add item to cart without login,TC024,Module is accessible and data is ready,"1. Go to product page as guest 2. Click ""Add to Cart""",Redirect to login or show guest cart,Redirect to login shown,Pass,Nisha Sharma,Negative test,P1
+TID025,Cart persists after login,TC025,Module is accessible and data is ready,1. Add items as guest 2. Login 3. View cart,Items retained in cart,Items retained in cart,Pass,Nisha Sharma,Session test,P1
+TID026,Cart item removal,TC026,Module is accessible and data is ready,1. Add item to cart 2. Click remove icon next to item,Item is removed,Item is removed,Pass,Nisha Sharma,Positive test,P0
+TID027,Cart update quantity,TC027,Module is accessible and data is ready,1. Add item to cart 2. Change quantity from 1 to 3 3. Confirm update,Quantity updates in cart,Quantity updates in cart,Pass,Nisha Sharma,Positive test,P0
+TID028,Cart item quantity exceeds available stock,TC028,Module is accessible and data is ready,"1. Add item to cart 2. Enter quantity more than stock (e.g., 500)",Error message for limit shown,Error message for limit shown,Pass,Nisha Sharma,Negative test,P1
+TID029,Cart total updates correctly,TC029,Module is accessible and data is ready,1. Add 2 items to cart 2. Check total,Total reflects item prices,Total reflects item prices,Pass,Nisha Sharma,Positive test,P0
+TID030,Empty cart view,TC030,Module is accessible and data is ready,1. Login as user 2. Go to cart without adding anything,Message: “Your cart is empty” shown,Message: “Your cart is empty” shown,Pass,Nisha Sharma,UI validation,P2
+TID031,Checkout with valid details,TC031,Module is accessible and data is ready,1. Add items to cart 2. Click Checkout 3. Enter valid shipping info 4. Confirm order,Order placed successfully,Order placed successfully,Pass,Nisha Sharma,Positive test,P0
+TID032,Checkout with missing address,TC032,Module is accessible and data is ready,1. Add item to cart 2. Click Checkout 3. Leave address blank 4. Submit,Error shown for missing fields,Error shown for missing fields,Pass,Nisha Sharma,Negative test,P1
+TID033,Checkout with invalid postal code,TC033,Module is accessible and data is ready,1. Add items to cart 2. Enter invalid ZIP code 3. Submit form,Error shown for invalid ZIP,Error shown for invalid ZIP,Pass,Nisha Sharma,Validation test,P1
+TID034,Checkout address autofill works,TC034,Module is accessible and data is ready,1. Login as returning user 2. Add items 3. Go to Checkout,Previous address auto-populated,Previous address auto-populated,Pass,Nisha Sharma,User experience test,P2
+TID035,Checkout with multiple addresses,TC035,Module is accessible and data is ready,1. Add items 2. Choose different address from saved list 3. Confirm order,Order placed to selected address,Order placed to selected address,Pass,Nisha Sharma,Positive test,P1
+TID036,Checkout with promo code,TC036,Module is accessible and data is ready,1. Add items 2. Enter valid promo code 3. Observe discount,Discount applied,Discount applied,Pass,Nisha Sharma,Promotion scenario,P1
+TID037,Checkout with invalid promo code,TC037,Module is accessible and data is ready,1. Add item to cart 2. Enter wrong promo code 3. Click Apply,Error shown for invalid code,Error shown for invalid code,Pass,Nisha Sharma,Negative test,P2
+TID038,Checkout currency change,TC038,Module is accessible and data is ready,1. Change currency 2. Add item 3. Go to checkout,Prices update based on currency,Prices update based on currency,Pass,Nisha Sharma,Multi-currency test,P2
+TID039,Checkout with express delivery,TC039,Module is accessible and data is ready,1. Add items 2. Select express delivery 3. Complete checkout,Delivery mode set as express,Delivery mode set as express,Pass,Nisha Sharma,Shipping test,P1
+TID040,Checkout with gift wrap option,TC040,Module is accessible and data is ready,1. Add item 2. Select gift wrap during checkout 3. Complete order,Gift wrap confirmation shown,Gift wrap confirmation shown,Pass,Nisha Sharma,Optional feature test,P2
+TID041,Payment with valid card details,TC041,Module is accessible and data is ready,"1. Proceed to checkout 2. Select credit card 3. Enter valid card number, expiry, and CVV 4. Click Pay",Payment processed successfully,Payment processed successfully,Pass,Nisha Sharma,Positive test,P0
+TID042,Payment with expired card,TC042,Module is accessible and data is ready,1. Proceed to payment 2. Enter expired card info 3. Click Pay,Error shown for expiry date,Error shown for expiry date,Pass,Nisha Sharma,Negative test,P1
+TID043,Payment using UPI,TC043,Module is accessible and data is ready,1. Select UPI as payment method 2. Enter valid UPI ID 3. Approve request in app,Payment completed via UPI,Payment completed via UPI,Pass,Nisha Sharma,Alternate method,P1
+TID044,Payment with insufficient funds,TC044,Module is accessible and data is ready,1. Use test card with no funds 2. Submit payment,Error message shown,Transaction declined due to funds,Pass,Nisha Sharma,Negative test,P1
+TID045,Payment retry after failure,TC045,Module is accessible and data is ready,1. Fail payment intentionally 2. Retry with valid method,Payment succeeds after retry,Payment succeeds after retry,Pass,Nisha Sharma,Retry test,P1
+TID046,Payment with invalid CVV,TC046,Module is accessible and data is ready,1. Select card 2. Enter wrong CVV 3. Click Pay,Error for incorrect CVV,Error for incorrect CVV,Pass,Nisha Sharma,Validation test,P1
+TID047,Payment page timeout,TC047,Module is accessible and data is ready,1. Idle on payment page for long time 2. Attempt to pay,Error or session timeout message,Session timed out,Pass,Nisha Sharma,Session test,P2
+TID048,Save card for future,TC048,Module is accessible and data is ready,1. Enter card details 2. Tick “Save this card” 3. Complete payment,Card saved securely,Card saved securely,Pass,Nisha Sharma,UX feature test,P1
+TID049,Payment cancellation mid-process,TC049,Module is accessible and data is ready,1. Start payment 2. Click Cancel or close window,Process is halted and status shown,Process halted as expected,Pass,Nisha Sharma,User interrupt test,P2
+TID050,Multiple payment attempts,TC050,Module is accessible and data is ready,1. Try paying with failed card 2. Try again with valid card,"First fails, second succeeds","First fails, second succeeds",Pass,Nisha Sharma,Multiple attempts,P1
+TID051,Forgot password with valid email,TC051,Module is accessible and data is ready,1. Go to login page 2. Click 'Forgot Password' 3. Enter registered email 4. Click Submit,Reset link sent to email,Reset link sent to email,Pass,Nisha Sharma,Positive test,P0
+TID052,Forgot password with unregistered email,TC052,Module is accessible and data is ready,1. Go to login page 2. Click 'Forgot Password' 3. Enter random email 4. Submit,Error shown: Email not found,Error shown as expected,Pass,Nisha Sharma,Negative test,P1
+TID053,Reset password with matching confirmation,TC053,Reset link is accessed via email,1. Enter new password 2. Confirm password 3. Submit,Password reset successful,Password reset successful,Pass,Nisha Sharma,Positive test,P0
+TID054,Reset password with mismatched confirmation,TC054,Reset link is accessed via email,1. Enter new password 2. Enter different confirm password 3. Submit,Error shown: Passwords do not match,Error shown as expected,Pass,Nisha Sharma,Negative test,P1
+TID055,Expired password reset link,TC055,Link is expired,1. Open expired reset link 2. Try to set new password,Error shown: Link expired,Error message shown,Pass,Nisha Sharma,Link expiry test,P2
+TID056,Password reset with weak password,TC056,Reset link is valid,1. Enter short or common password 2. Submit,Error shown: Weak password,Error shown: Weak password,Pass,Nisha Sharma,Validation test,P1
+TID057,Multiple password reset attempts,TC057,Module is accessible and data is ready,1. Click Forgot Password 2. Submit multiple times within short interval,System limits or handles attempts,Handled with proper throttling,Pass,Nisha Sharma,Security test,P2
+TID058,Reset password without special character,TC058,Reset link is valid,1. Enter password without special characters 2. Submit,Validation error shown,Error shown: Invalid format,Pass,Nisha Sharma,Format validation,P1
+TID059,Forgot password UI layout check,TC059,Module is accessible and data is ready,"1. Open Forgot Password page 2. Verify label alignment, spacing, and responsiveness",UI appears consistent and clean,UI verified,Pass,Nisha Sharma,UI validation,P2
+TID060,Blank email in forgot password,TC060,Module is accessible and data is ready,1. Open Forgot Password page 2. Leave email blank 3. Submit,Error shown: Field required,Error shown as expected,Pass,Nisha Sharma,Mandatory field test,P1
+TID061,Login with empty credentials,TC061,Module is accessible and data is ready,1. Go to Login page 2. Click Login without entering credentials,Error: Email and Password required,Error shown as expected,Pass,Nisha Sharma,Negative test,P1
+TID062,Login with invalid email format,TC062,Module is accessible and data is ready,"1. Enter email: ""invalid-email"" 2. Enter password 3. Click Login",Error: Invalid email format,Error shown as expected,Pass,Nisha Sharma,Validation test,P1
+TID063,Login with SQL injection,TC063,Module is accessible and data is ready,"1. Enter ""' OR 1=1 --"" as email 2. Any password 3. Click Login",Error: Invalid credentials/Error caught,Error handled securely,Pass,Nisha Sharma,Security test,P1
+TID064,Login with HTML code in input,TC064,Module is accessible and data is ready,"1. Enter email: ""<script>"" 2. Password: ""Test@123"" 3. Click Login",Error: Invalid input format,Error handled properly,Pass,Nisha Sharma,Input validation,P1
+TID065,Registration with missing mandatory fields,TC065,Module is accessible and data is ready,1. Go to Registration 2. Leave required fields blank 3. Submit,Error: Required fields missing,Error message shown,Pass,Nisha Sharma,Negative test,P1
+TID066,Registration with invalid email format,TC066,Module is accessible and data is ready,"1. Enter name, email: ""user@"", password 2. Submit",Error: Invalid email format,Error shown as expected,Pass,Nisha Sharma,Validation test,P1
+TID067,Registration with weak password,TC067,Module is accessible and data is ready,"1. Fill form 2. Enter weak password: ""1234"" 3. Submit",Error: Weak password,Error message displayed,Pass,Nisha Sharma,Security test,P1
+TID068,Registration with HTML code in fields,TC068,Module is accessible and data is ready,"1. Enter ""<script>"" in name or email 2. Submit",Error: Invalid characters,Error handled properly,Pass,Nisha Sharma,Input sanitization,P1
+TID069,Add to cart without selecting product,TC069,Module is accessible and data is ready,1. Click 'Add to Cart' without selecting item,Error: No product selected,Error shown as expected,Pass,Nisha Sharma,Negative test,P1
+TID070,Add to cart with invalid quantity,TC070,Module is accessible and data is ready,1. Select product 2. Enter quantity: -5 3. Click Add to Cart,Error: Invalid quantity,Error shown properly,Pass,Nisha Sharma,Input validation,P1
+TID071,Add to cart with no stock,TC071,Module is accessible and data is ready,1. Go to out-of-stock product 2. Click 'Add to Cart',Error: Product out of stock,Error shown correctly,Pass,Nisha Sharma,Negative test,P1
+TID072,Add to cart without login,TC072,Module is accessible and data is ready,1. Visit product page 2. Click 'Add to Cart' without logging in,Prompt to login,Prompt shown as expected,Pass,Nisha Sharma,Session validation,P1
+TID073,Checkout with invalid address,TC073,Module is accessible and data is ready,1. Add product to cart 2. Proceed to checkout 3. Enter invalid address 4. Click 'Place Order',Error: Invalid address,Error displayed properly,Pass,Nisha Sharma,Negative test,P1
+TID074,Checkout with blank address,TC074,Module is accessible and data is ready,1. Add product to cart 2. Proceed to checkout 3. Leave address fields empty 4. Submit,Error: Address required,Error shown correctly,Pass,Nisha Sharma,Validation test,P1
+TID075,Checkout with expired promo code,TC075,Module is accessible and data is ready,1. Add items 2. Apply expired promo code 3. Checkout,Error: Code expired,Error shown as expected,Pass,Nisha Sharma,Promo test,P1
+TID076,Checkout with manipulated cart data,TC076,Module is accessible and data is ready,1. Tamper cart total using dev tools 2. Proceed to checkout,Error: Price mismatch detected,Error handled correctly,Pass,Nisha Sharma,Security test,P1
+TID077,Payment with invalid card number,TC077,Module is accessible and data is ready,1. Proceed to payment 2. Enter card: 1234 5678 1234 5678 3. Submit,Error: Invalid card number,Error shown properly,Pass,Nisha Sharma,Validation test,P1
+TID078,Payment with expired card,TC078,Module is accessible and data is ready,1. Enter expired card details 2. Click Pay,Error: Card expired,Error displayed correctly,Pass,Nisha Sharma,Negative test,P1
+TID079,Payment with insufficient funds,TC079,Module is accessible and data is ready,1. Enter valid but low-limit card 2. Try high-value transaction,Error: Payment declined,Error shown as expected,Pass,Nisha Sharma,Bank validation,P1
+TID080,Payment interrupted mid-process,TC080,Module is accessible and data is ready,1. Start payment 2. Refresh/close browser mid-way,Error: Payment session expired,Error handled gracefully,Pass,Nisha Sharma,Session handling,P1
+TID081,Login using browser back/forward navigation,TC081,Edge use case scenario,1. Login 2. Use browser back/forward buttons,App should maintain session or prompt login,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID082,Login after session expiry,TC082,Edge use case scenario,1. Login 2. Wait for session to expire 3. Try navigating,Redirect to login,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID083,Registration using copy-pasted long text,TC083,Edge use case scenario,1. Paste long name/email from external source 2. Submit form,App accepts or trims appropriately,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID084,Registration with emoji characters,TC084,Edge use case scenario,1. Enter name with emojis 2. Enter valid email/password 3. Submit,Error or filter applied,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID085,Add to cart from search result page,TC085,Edge use case scenario,1. Search for product 2. Click 'Add to Cart' from result,App adds to cart properly,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID086,Add to cart after price update,TC086,Edge use case scenario,1. Keep product open 2. Wait for price change 3. Add to cart,Cart updates to latest price,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID087,Checkout after network disconnect/reconnect,TC087,Edge use case scenario,1. Add item to cart 2. Disconnect network 3. Reconnect 4. Try checkout,App handles reconnect well,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID088,Checkout with browser autofill,TC088,Edge use case scenario,1. Use browser autofill for address 2. Submit,App captures and validates properly,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID089,Payment via saved card info,TC089,Edge use case scenario,1. Choose saved card 2. Confirm payment,Smooth payment without re-entry,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID090,Payment cancel from gateway,TC090,Edge use case scenario,1. Start payment via gateway 2. Click cancel on gateway,App redirects with cancellation message,Handled gracefully,Pass,Nisha Sharma,Out-of-box,P1
+TID091,Test minimum input length for Registration,TC091,Form has input fields,1. Go to Registration Page 2. Enter name: A 3. Fill other fields normally 4. Submit,Error for too short input,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID092,Test maximum input length for Registration,TC092,Form has input fields,1. Go to Registration Page 2. Enter name with 255 characters 3. Fill other fields normally 4. Submit,Accept or truncate correctly,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID093,Test empty optional fields during Registration,TC093,Form has input fields,1. Go to Registration Page 2. Leave optional fields blank 3. Submit,Form submits successfully,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID094,Test special characters in name field,TC094,Form has input fields,1. Enter name: @#%^& 2. Fill other fields normally 3. Submit,Error or sanitize input,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID095,Test max password length during Registration,TC095,Form has input fields,1. Enter 50-character password 2. Submit,Input accepted or handled correctly,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID096,Test minimum input length for Payment,TC096,Form has input fields,"1. Proceed to payment 2. Enter short card number (e.g., 123) 3. Submit",Error for invalid card,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID097,Test maximum input length for Payment,TC097,Form has input fields,1. Enter very long card number (more than 20 digits) 2. Submit,Input rejected or trimmed,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID098,Test empty CVV during Payment,TC098,Form has input fields,1. Leave CVV blank 2. Try to submit,Error message for required field,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID099,Test past expiry date on card,TC099,Form has input fields,1. Enter card expiry: 12/20 2. Fill other valid info 3. Submit,Error for expired card,Correct response shown,Pass,Nisha Sharma,Boundary value,P1
+TID100,Test future expiry year on card,TC100,Form has input fields,1. Enter expiry: 12/35 2. Fill other details 3. Submit,Accepted as valid,Correct response shown,Pass,Nisha Sharma,Boundary value,P1

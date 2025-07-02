@@ -1,0 +1,21 @@
+ Test Plan – OpenCart QA Project
+
+Project: OpenCart E-commerce Platform
+Tester: Nisha Sharma
+Date: July 02, 2025
+
+ Objective
+
+To verify all core e-commerce functionalities (like login, registration, cart, checkout, and payments) through manual testing for quality assurance.
+
+ Testing Types
+
+-  Positive & Negative Testing
+-  Boundary Value Analysis
+-  Usability & Functional Testing
+
+ Deliverables
+
+-  Detailed Test Cases
+-  Bug Report
+-  RTM (Requirements Traceability Matrix)
